@@ -1,6 +1,6 @@
 // step 2 of creating the employees
-let employees = [
-    {name:"Santiago Jimenez", hourlyRate:17, hoursWorked:30},
+let employee = [
+    {name:"Santiago Gimenez", hourlyRate:17, hoursWorked:30},
     {name:"Edson Alvares", hourlyRate:20, hoursWorked:36},
     {name:"Javier Hernandez", hourlyRate:26, hoursWorked:42},
     {name:"Memo Ochoa", hourlyRate:25, hoursWorked:45},
@@ -32,3 +32,28 @@ function calculateTaxes(grosspay) {
 }
 
 // console.log(calculateTaxes(300));
+
+//step 6
+function processPayroll(employee) {
+    let basePay = calculateBasePay(employee.hourlyRate, employee.hoursWorked);
+    let overtimePay = calculateOvertimePay(employee.hourlyRate, employee.hoursWorked);
+    let grossPay = basePay + overtimePay;
+    let netPay = calculateTaxes(grossPay);
+    return {
+        name: employee.name,
+        basePay: basePay,
+        overtimePay: overtimePay,
+        grossPay: grossPay,
+        netPay: netPay
+    };
+}
+
+// console.log(processPayroll(employee[3]));
+
+
+// Step 6: Write processPayroll(employee) that returns an object with:
+// name
+// basePay
+// overtimePay
+// grossPay
+// netPay
