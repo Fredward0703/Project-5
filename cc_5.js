@@ -5,3 +5,13 @@ let employees = [
     {name:"Javier Hernandez", hourlyRate:26, hoursWorked:42},
     {name:"Memo Ochoa", hourlyRate:25, hoursWorked:45},
 ];
+
+// start of step 3
+function calculateBasePay(rate, hours) {
+    if (hours > 40) {
+        hours = 40;
+    }
+    return rate * hours;
+}
+
+// console.log(calculateBasePay(20,45));
