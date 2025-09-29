@@ -26,3 +26,9 @@ function calculateOvertimePay(rate , hours) {
 }
 
 // console.log(calculateOvertimePay(20,39));
+// step 5
+function calculateTaxes(grosspay) {
+    return (grosspay * (1 - .15));
+}
+
+// console.log(calculateTaxes(300));
