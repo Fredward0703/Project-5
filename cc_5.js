@@ -32,13 +32,12 @@ function calculateTaxes(grosspay) {
 }
 
 // console.log(calculateTaxes(300));
-
 //step 6
 function processPayroll(employee) {
     let basePay = calculateBasePay(employee.hourlyRate, employee.hoursWorked);
     let overtimePay = calculateOvertimePay(employee.hourlyRate, employee.hoursWorked);
     let grossPay = basePay + overtimePay;
-    let netPay = calculateTaxes(grossPay);
+    let netPay = calculateTaxes(grossPay).toFixed(2);
     return {
         name: employee.name,
         basePay: basePay,
@@ -49,11 +48,7 @@ function processPayroll(employee) {
 }
 
 // console.log(processPayroll(employee[3]));
-
-
-// Step 6: Write processPayroll(employee) that returns an object with:
-// name
-// basePay
-// overtimePay
-// grossPay
-// netPay
+// step 7
+for (const payroll of employee) {
+    console.log(processPayroll(payroll));
+}
